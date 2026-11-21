@@ -8,7 +8,6 @@ class Montserrat < Formula
 
   depends_on xcode: ["16.0", :build]
   depends_on macos: :sequoia
-  depends_on "macos-fuse-t/homebrew-cask/fuse-t" => :recommended
 
   def install
     system "./scripts/build.sh"
@@ -23,7 +22,7 @@ class Montserrat < Formula
     <<~EOS
       Montserrat requires FUSE-T (or macOS 15+ FSKit) for mounting user-space filesystems.
       If not already installed, run:
-        brew install --cask macos-fuse-t/homebrew-cask/fuse-t
+          brew install --cask macos-fuse-t/cask/fuse-t  
 
       To register and start the background auto-mount daemon:
         sudo montserrat daemon install
