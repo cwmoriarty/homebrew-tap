@@ -2,13 +2,12 @@ class Montserrat < Formula
   desc "Native read/write ext4 and Linux filesystem tool for modern macOS"
   homepage "https://github.com/cwmoriarty/montserrat"
   url "https://github.com/cwmoriarty/montserrat/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "efbb98ffe81ebfc35d75ef815963cb484033aef9454ec570f1df52aa0c221d18"
+  sha256 "610140db6f612c15673c9abae0e5acbbae0a865f017ddf156500bde0f386fa44"
   license "MIT"
   head "https://github.com/cwmoriarty/montserrat.git", branch: "main"
 
   depends_on xcode: ["16.0", :build]
   depends_on macos: :sequoia
-  depends_on "macos-fuse-t/homebrew-cask/fuse-t" => :recommended
 
   def install
     system "./scripts/build.sh"
@@ -23,8 +22,8 @@ class Montserrat < Formula
     <<~EOS
       Montserrat requires FUSE-T (or macOS 15+ FSKit) for mounting user-space filesystems.
       If not already installed, run:
-        brew install --cask macos-fuse-t/homebrew-cask/fuse-t
-
+        brew install --cask macos-fuse-t/cask/fuse-t                                                                                                                                   
+        
       To register and start the background auto-mount daemon:
         sudo montserrat daemon install
     EOS
